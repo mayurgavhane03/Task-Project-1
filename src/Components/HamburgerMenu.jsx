@@ -40,7 +40,7 @@ const HamburgerMenu = () => {
       </div>
       {isOpen && (
         <ul
-          className="absolute right-0 top-12 w-64 bg-white text-gray-800 rounded-lg shadow-lg p-4 space-y-3 transition-transform duration-300 ease-out"
+          className="absolute left-0 top-12 w-64 bg-white text-gray-800 rounded-lg shadow-lg p-4 space-y-3 transition-transform duration-300 ease-out"
           ref={menuRef}
         >
           <li className="hover:bg-sky-100 px-4 py-2 rounded-lg transition duration-200 cursor-pointer">
