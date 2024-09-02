@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* App.css or index.css */
+body {
+  @apply bg-gray-100 text-gray-900;
+}
+
+input, select, textarea {
+  @apply border-gray-300;
+}
+
+button {
+  @apply focus:outline-none;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7fafc;
+  margin: 0;
+  padding: 0;
+}
