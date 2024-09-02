@@ -23,7 +23,6 @@ const DataTable = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(5);
 
-  // Calculate the starting and ending indices of the current page
   const startIdx = currentPage * itemsPerPage;
   const currentItems = students.slice(startIdx, startIdx + itemsPerPage);
 
@@ -41,19 +40,18 @@ const DataTable = () => {
   };
 
   return (
-    <div className="p-10 bg-gradient-to-r from-blue-500 to-teal-400 text-white min-h-screen flex flex-col items-center justify-center">
+    <div className="p-4 sm:p-6 lg:p-10 bg-gradient-to-r from-blue-500 to-teal-400 text-white min-h-screen flex flex-col items-center justify-center">
 
-      <h2 className="text-5xl font-extrabold mb-10 tracking-wide drop-shadow-lg">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 md:mb-10 tracking-wide drop-shadow-lg">
         Student Data
       </h2>
 
-
-      <div className="flex items-center justify-center mb-8 space-x-4">
+      <div className="flex items-center justify-center mb-4 md:mb-8 space-x-2 sm:space-x-4">
         <span className="font-semibold">Rows per page:</span>
         <select
           value={itemsPerPage}
           onChange={handleItemsPerPageChange}
-          className="p-2 bg-white text-gray-800 rounded-md shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-400"
+          className="p-1 sm:p-2 bg-white text-gray-800 rounded-md shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-400"
         >
           <option value={5}>5</option>
           <option value={10}>10</option>
@@ -62,7 +60,7 @@ const DataTable = () => {
         </select>
       </div>
 
-      <div className="w-full max-w-7xl bg-white shadow-2xl rounded-2xl overflow-hidden transition-all transform hover:scale-105 hover:shadow-3xl duration-300">
+      <div className="w-full max-w-7xl overflow-x-auto bg-white shadow-2xl rounded-2xl">
         <table
           {...getTableProps()}
           className="min-w-full divide-y divide-gray-200"
@@ -73,7 +71,7 @@ const DataTable = () => {
                 {headerGroup.headers.map((column) => (
                   <th
                     {...column.getHeaderProps()}
-                    className="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider border-b-2 border-white"
+                    className="px-2 sm:px-4 py-2 sm:py-4 text-left text-xs sm:text-sm font-bold text-white uppercase tracking-wider border-b-2 border-white"
                   >
                     {column.render("Header")}
                   </th>
@@ -89,7 +87,7 @@ const DataTable = () => {
                   {row.cells.map((cell) => (
                     <td
                       {...cell.getCellProps()}
-                      className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium"
+                      className="px-2 sm:px-4 py-2 whitespace-nowrap text-xs sm:text-sm text-gray-900 font-medium"
                     >
                       {cell.render("Cell")}
                     </td>
@@ -101,8 +99,7 @@ const DataTable = () => {
         </table>
       </div>
 
-
-      <div className="mt-8 flex items-center justify-center space-x-4">
+      <div className="mt-6 md:mt-8 flex items-center justify-center space-x-2 sm:space-x-4">
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}
@@ -111,11 +108,11 @@ const DataTable = () => {
           marginPagesDisplayed={2}
           pageRangeDisplayed={3}
           onPageChange={handlePageChange}
-          containerClassName={"pagination flex justify-center items-center space-x-2"}
-          pageClassName={"px-4 py-2 rounded-md bg-white text-blue-500 shadow-md hover:bg-teal-200 transition-all duration-300 cursor-pointer"}
+          containerClassName={"pagination flex justify-center items-center space-x-1 sm:space-x-2"}
+          pageClassName={"px-2 sm:px-4 py-1 sm:py-2 rounded-md bg-white text-blue-500 shadow-md hover:bg-teal-200 transition-all duration-300 cursor-pointer"}
           activeClassName={"bg-teal-500 text-white"}
-          previousClassName={"px-4 py-2 rounded-md bg-teal-500 text-white shadow-md hover:bg-teal-400 transition duration-300 cursor-pointer"}
-          nextClassName={"px-4 py-2 rounded-md bg-teal-500 text-white shadow-md hover:bg-teal-400 transition duration-300 cursor-pointer"}
+          previousClassName={"px-2 sm:px-4 py-1 sm:py-2 rounded-md bg-teal-500 text-white shadow-md hover:bg-teal-400 transition duration-300 cursor-pointer"}
+          nextClassName={"px-2 sm:px-4 py-1 sm:py-2 rounded-md bg-teal-500 text-white shadow-md hover:bg-teal-400 transition duration-300 cursor-pointer"}
           disabledClassName={"opacity-50 cursor-not-allowed"}
           pageLinkClassName={"pagination-link"}
         />
