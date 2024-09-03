@@ -15,7 +15,7 @@ const menuItems = [
       { path: '/services/app-development', label: 'App Development' },
     ],
   },
-  { path: '/contact', label: 'Contact' },
+  { path: '/', label: 'Contact' },
 ];
 
 const HamburgerMenu = () => {
